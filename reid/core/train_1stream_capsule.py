@@ -52,7 +52,8 @@ def train(args, model, train_loader, start_epoch):
     for epoch in range(start_epoch, args.epochs):
         adjust_lr(epoch)
 
-        print_freq = 1
+        # print_freq = 1
+        print_freq = args.print_freq
         batch_time = AverageMeter()
         data_time = AverageMeter()
         losses = AverageMeter()

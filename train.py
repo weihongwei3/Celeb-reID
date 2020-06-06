@@ -60,13 +60,13 @@ def main(args):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="ReIDCaps")
     # data
-    parser.add_argument('--train_path', type=str, default='/home/yan/datasets/celeb/train', help="train image with soft mask")
-    parser.add_argument('--gallery_path', type=str, default='/home/yan/datasets/celeb/gallery', help="gallery image with soft mask")
-    parser.add_argument('--query_path', type=str, default='/home/yan/datasets/celeb/query', help="query image with soft mask")
+    parser.add_argument('--train_path', type=str, default='../data/Celeb-reID/train', help="train image with soft mask")
+    parser.add_argument('--gallery_path', type=str, default='../data/Celeb-reID/gallery', help="gallery image with soft mask")
+    parser.add_argument('--query_path', type=str, default='../data/Celeb-reID/query', help="query image with soft mask")
 
     parser.add_argument('--name_pattern', type=str, default='celeb', help="celeb or market")
 
-    parser.add_argument('-b', '--batch-size', type=int, default=20)
+    parser.add_argument('-b', '--batch-size', type=int, default=20)  # 20
     parser.add_argument('-j', '--workers', type=int, default=4)
     parser.add_argument('--height', type=int, default=224, help="input height, default: 224")
     parser.add_argument('--width', type=int, default=224, help="input width, default: 224")
@@ -87,7 +87,7 @@ if __name__ == '__main__':
     parser.add_argument('--evaluate', action='store_true', default=False, help="evaluation only")
     parser.add_argument('--epochs', type=int, default=50)
     parser.add_argument('--step_size', type=int, default=40)
-    parser.add_argument('--print-freq', type=int, default=1)
+    parser.add_argument('--print_freq', type=int, default=100)
     parser.add_argument('--save_freq', type=int, default=5, help="model save frequence")
     # metric learning
     parser.add_argument('--dist-metric', type=str, default='euclidean')

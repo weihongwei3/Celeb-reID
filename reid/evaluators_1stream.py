@@ -17,7 +17,9 @@ from .utils import to_numpy
 def extract_cnn_feature(model, inputs, output_feature=None):
     model.eval()
     inputs = to_torch(inputs)
-    inputs = Variable(inputs, volatile=True)
+    # inputs = Variable(inputs, volatile=True)
+    with torch.no_grad():
+        inputs = Variable(inputs)
 
     outputs = model(inputs, output_feature)
     outputs = outputs.data.cpu()
